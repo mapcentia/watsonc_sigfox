@@ -18,24 +18,20 @@ use \app\inc\Route;
  */
 class Sigfox extends \app\inc\Controller
 {
-
+    /**
+     * Sigfox constructor.
+     */
     function __construct()
     {
         parent::__construct();
-
     }
 
     /**
      * @return array
      */
     public function get_index() {
-
-        $response = [];
-
-        $response['message'] = "";
-        $response['success'] = true;
-        $response['data'] = Input::get();
-
+        $sigfox = new \app\extensions\watsonc_sigfox\models\Sigfox();
+        $response =$sigfox->store(Input::get());
         return $response;
     }
 }
