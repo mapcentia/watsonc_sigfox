@@ -29,7 +29,7 @@ class Sigfox extends Model
     {
 
         $response = [];
-        $rel = "sensor.sensordata";
+        $rel = "sensor.sensordata_sigfox";
         $sql = "INSERT INTO {$rel} (terminalid, value, timeofmeas) VALUES (:terminalid, :value, :timeofmeas)";
         $res = $this->prepare($sql);
         try {
